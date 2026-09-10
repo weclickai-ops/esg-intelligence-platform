@@ -99,6 +99,9 @@ const insights = [
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSolution, setActiveSolution] = useState(0);
+  const selectedSolution = solutions[activeSolution] ?? solutions[0];
+
+  if (!selectedSolution) return null;
 
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
@@ -175,9 +178,9 @@ function Index() {
             </div>
             <div className="rounded-lg bg-secondary p-7 lg:col-span-7 lg:p-10" aria-live="polite">
               <div className="flex items-center justify-between border-b border-border pb-5"><Eyebrow>Capability index</Eyebrow><span className="font-display text-3xl text-muted-foreground/50">0{activeSolution + 1}</span></div>
-              <h3 className="mt-8 max-w-[20ch] font-display text-3xl font-medium">{solutions[activeSolution].title}</h3>
-              <p className="mt-3 text-muted-foreground">{solutions[activeSolution].summary}</p>
-              <div className="mt-8 grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">{solutions[activeSolution].items.map((item, index) => <div key={item} className="flex min-h-16 items-center gap-4 bg-background p-4 text-sm"><span className="text-xs text-muted-foreground">{String(index + 1).padStart(2, "0")}</span><span>{item}</span></div>)}</div>
+              <h3 className="mt-8 max-w-[20ch] font-display text-3xl font-medium">{selectedSolution.title}</h3>
+              <p className="mt-3 text-muted-foreground">{selectedSolution.summary}</p>
+              <div className="mt-8 grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">{selectedSolution.items.map((item, index) => <div key={item} className="flex min-h-16 items-center gap-4 bg-background p-4 text-sm"><span className="text-xs text-muted-foreground">{String(index + 1).padStart(2, "0")}</span><span>{item}</span></div>)}</div>
             </div>
           </div>
         </div>

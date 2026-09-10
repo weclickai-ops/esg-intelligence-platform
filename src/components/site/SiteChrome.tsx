@@ -2,7 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 
-import logoAsset from "../../assets/esg-advocacy-logo.jpg.asset.json";
+import logoHorizontal from "../../assets/esg-advocacy-logo-horizontal.png";
 import { Button } from "../ui/button";
 import { CONSULT_MAILTO, navItems } from "../../data/site";
 import { Reveal } from "./Reveal";
@@ -51,9 +51,11 @@ export function SiteHeader() {
       <div className="site-container flex h-20 items-center justify-between gap-6">
         <Link to="/" aria-label="ESG Advocacy home" className="logo-link shrink-0">
           <img
-            src={logoAsset.url}
+            src={logoHorizontal}
             alt="ESG Advocacy — Purpose. Progress. Impact."
-            className="h-14 w-auto object-contain object-left mix-blend-multiply"
+            width={1394}
+            height={296}
+            className="h-9 w-auto object-contain object-left sm:h-11"
           />
         </Link>
         <nav aria-label="Primary navigation" className="hidden items-center gap-7 lg:flex">
@@ -103,7 +105,14 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-secondary">
       <div className="site-container grid gap-10 py-14 md:grid-cols-12">
         <div className="md:col-span-5">
-          <img src={logoAsset.url} alt="ESG Advocacy" className="h-16 w-auto object-contain object-left mix-blend-multiply" />
+          <img
+            src={logoHorizontal}
+            alt="ESG Advocacy"
+            width={1394}
+            height={296}
+            loading="lazy"
+            className="h-12 w-auto object-contain object-left"
+          />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
             AI-First ESG Intelligence, Research &amp; Impact Platform. Purpose. Progress. Impact.
           </p>

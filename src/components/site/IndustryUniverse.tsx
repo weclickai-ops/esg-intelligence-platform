@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import { industries } from "../../data/site";
+import { useIsMobile } from "../../hooks/use-mobile";
 import { prefersReducedMotion } from "./canvas";
 
 /**
@@ -12,6 +13,7 @@ export function IndustryUniverse() {
   const [active, setActive] = useState(0);
   const [angle, setAngle] = useState(0);
   const paused = useRef(false);
+  const isMobile = useIsMobile();
   const selected = industries[active]!;
 
   useEffect(() => {
@@ -31,6 +33,21 @@ export function IndustryUniverse() {
   return (
     <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
       <div className="lg:col-span-7">
+        {isMobile ? (
+          <div className="universe-chips">
+            {industries.map((industry, i) => (
+              <button
+                key={industry.name}
+                type="button"
+                className={`universe-node is-static ${active === i ? "is-active" : ""}`}
+                onClick={() => setActive(i)}
+                aria-pressed={active === i}
+              >
+                {industry.name}
+              </button>
+            ))}
+          </div>
+        ) : (
         <div
           className="universe"
           onMouseEnter={() => (paused.current = true)}
@@ -68,6 +85,7 @@ export function IndustryUniverse() {
             );
           })}
         </div>
+        )}
       </div>
       <div key={active} className="panel-swap lg:col-span-5">
         <div className="rounded-lg border border-border bg-background p-7">

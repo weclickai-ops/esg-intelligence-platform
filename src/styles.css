@@ -343,7 +343,7 @@
 @media(max-width:767px){ .universe-node { font-size:.7rem; padding:.35rem .6rem; } }
 
 .intel-hero { position:relative; overflow:hidden; border-bottom:1px solid var(--border); }
-.intel-hero-field { position:absolute; inset:0; width:100%; height:100%; color:var(--forest); opacity:.28; pointer-events:none; }
+.intel-hero-field { position:absolute; inset:0; width:100%; height:100%; color:var(--forest); opacity:.14; pointer-events:none; }
 @media(min-width:1024px){ .intel-hero-field { opacity:.5; -webkit-mask-image:linear-gradient(90deg,transparent 0%,transparent 42%,#000 62%); mask-image:linear-gradient(90deg,transparent 0%,transparent 42%,#000 62%); } }
 .research-card { background:var(--background); padding:1.75rem; display:flex; flex-direction:column; transition:background .3s ease, transform .3s ease; }
 .research-card:hover { background:color-mix(in oklab,var(--secondary) 60%,var(--background)); transform:translateY(-3px); }

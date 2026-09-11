@@ -23,13 +23,16 @@ export function SolutionOrbit() {
             <strong>ADVOCACY</strong>
           </div>
           {solutions.map((solution, i) => {
-            const angle = (i / solutions.length) * 360;
+            const angle = (i / solutions.length) * Math.PI * 2 - Math.PI / 2;
             return (
-              <div key={solution.title} className="orbit-slot" style={{ transform: `rotate(${angle}deg) translateY(-42%)` }}>
+              <div
+                key={solution.title}
+                className="orbit-slot"
+                style={{ left: `${50 + Math.cos(angle) * 42}%`, top: `${50 + Math.sin(angle) * 42}%` }}
+              >
                 <button
                   type="button"
                   className={`orbit-node ${active === i ? "is-active" : ""}`}
-                  style={{ transform: `rotate(${-angle}deg)` }}
                   onClick={() => {
                     setActive(i);
                     setShowAll(false);

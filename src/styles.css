@@ -308,9 +308,13 @@
 .orbit-node:hover { transform:translate(-50%,-50%) scale(1.04); }
 .orbit-node.is-active { border-color:var(--forest); box-shadow:0 18px 40px -30px var(--primary); color:var(--forest); }
 .outcome-cell { background:var(--background); padding:1.25rem; }
-.outcome-cell dt { font-size:.68rem; text-transform:uppercase; letter-spacing:.18em; color:var(--forest); }
-.outcome-cell dd { margin-top:.55rem; font-size:.85rem; line-height:1.55; color:var(--muted-foreground); }
-.disclosure { margin-top:1.75rem; border-top:1px solid var(--border); padding-top:1.25rem; }
+.outcome-cell > span { display:block; font-size:.66rem; text-transform:uppercase; letter-spacing:.16em; color:var(--forest); }
+.outcome-cell p { margin-top:.6rem; font-size:.85rem; line-height:1.55; color:var(--muted-foreground); }
+.disclosure { margin-top:1.75rem; padding-top:1.25rem; border-top:1px solid var(--border); width:100%; text-align:left; font-size:.85rem; color:var(--forest); transition:opacity .2s ease; }
+.disclosure:hover { opacity:.7; }
+.orbit-node span { display:block; font-size:.62rem; color:var(--muted-foreground); }
+.orbit-node strong { display:block; margin-top:.2rem; font-family:var(--font-display); font-weight:500; }
+.orbit-core span { font-size:.62rem; letter-spacing:.2em; opacity:.7; }
 
 .stack-layer { position:relative; display:grid; grid-template-columns:3rem 9rem 1fr; align-items:center; gap:1.5rem; padding:1.25rem 0; border-bottom:1px solid var(--border); }
 .stack-index { font-size:.72rem; color:var(--muted-foreground); }

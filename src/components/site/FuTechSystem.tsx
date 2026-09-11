@@ -51,8 +51,15 @@ export function FuTechSystem() {
         {positions.map((p, i) => (
           <g key={i} style={{ opacity: dim(i) }} className="arch-spoke-group">
             <line x1="300" y1="300" x2={p.x} y2={p.y} className="arch-spoke" />
+            <line
+              x1="300"
+              y1="300"
+              x2={p.x}
+              y2={p.y}
+              className="arch-flow"
+              style={{ animationDelay: `${i * 0.45}s` }}
+            />
             <circle cx={p.x} cy={p.y} r="6" className="arch-dot" />
-            <circle cx="300" cy="300" r="3.5" className="arch-pulse" style={{ animationDelay: `${i * 0.55}s`, offsetPath: `path('M 300 300 L ${p.x} ${p.y}')` } as React.CSSProperties} />
           </g>
         ))}
 

@@ -24,12 +24,12 @@ function rgba(ink: string, alpha: number) {
  * institutions, edges are relationships, travelling particles are data moving
  * through the system. Cursor position steers the globe; scroll tilts it.
  */
-export function IntelligenceGlobe({ className = "" }: { className?: string }) {
+export function IntelligenceGlobe({ className = "", focusX = 0.5 }: { className?: string; focusX?: number }) {
   const ref = useScene((f: Frame) => {
     const { ctx, w, h, t, ink } = f;
-    const cx = w / 2;
+    const cx = w * focusX;
     const cy = h / 2;
-    const R = Math.min(w, h) * 0.36;
+    const R = Math.min(w * 0.5, h) * 0.42;
 
     const mx = f.pointer ? (f.px - cx) / w : 0;
     const my = f.pointer ? (f.py - cy) / h : 0;

@@ -36,7 +36,7 @@ function Index() {
   return (
     <>
       <section className="hero-stage">
-        <IntelligenceGlobe className="hero-globe" />
+        <IntelligenceGlobe className="hero-globe" focusX={0.74} />
         <div className="site-container relative grid gap-10 py-16 lg:grid-cols-12 lg:py-28">
           <div className="lg:col-span-7">
             <Reveal>

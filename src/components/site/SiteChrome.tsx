@@ -65,7 +65,7 @@ export function SiteHeader() {
         </Link>
         <nav aria-label="Primary navigation" className="hidden items-center gap-5 xl:flex">
           <Link to="/about" className="nav-link" activeProps={{ className: "nav-link is-active" }}>
-            About &amp; Team
+            About
           </Link>
           <div className="nav-dropdown">
             <Button
@@ -107,7 +107,7 @@ export function SiteHeader() {
       </div>
       {menuOpen && (
         <nav aria-label="Mobile navigation" className="mobile-menu xl:hidden">
-          <Link to="/about" className="mobile-link">About &amp; Team</Link>
+          <Link to="/about" className="mobile-link">About</Link>
           <Button
             type="button"
             variant="ghost"

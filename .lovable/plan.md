@@ -1,23 +1,19 @@
-# ESG Advocacy Multi-Page Website
+# ESG Advocacy Navigation Update
 
 ## Goal
-Turn the existing premium one-page experience into a complete website with dedicated pages for About, Solutions, Industries, Insights, and Contact, while retaining the current Forest & Porcelain “Editorial instrument” direction.
+Preserve the approved website and make only the requested navigation, routing, About/Team, and Contact updates.
 
 ## What will change
-- Introduce a shared site header, responsive navigation, consultation action, and footer used across every page.
-- Update homepage navigation and calls-to-action to use proper page links instead of section anchors.
-- Keep the homepage as the high-level brand and conversion experience, with concise previews linking into the deeper pages.
-- Add dedicated pages:
-  - **About** — positioning, purpose-driven economy, Fu-Tech model, vision, mission, and differentiators.
-  - **Solutions** — all five solution disciplines and the complete capability catalogue in an easy-to-scan system.
-  - **Industries** — all twelve sectors, sector-specific priorities, and the shared engagement approach.
-  - **Insights** — ESG Intelligence knowledge hub with research, reports, perspectives, case studies, and thought leadership.
-  - **Contact** — consultation invitation, engagement areas, direct email action, and clear next-step process.
-- Give every page a distinct page title, description, social metadata, single H1, and clear conversion path.
-- Preserve the uploaded logo, typography, color tokens, data-inspired visuals, subtle motion, and responsive behavior.
+- Remove the Home link; the existing clickable ESG Advocacy logo remains the home link.
+- Replace About and Team navigation with one **About & Team** link to `/about`.
+- Append the existing Team sections beneath the existing About content without redesigning either experience.
+- Add a premium **Industries** dropdown containing separate links to the existing Industries and Insights pages.
+- Keep Solutions and Portfolio as unchanged top-level pages.
+- Rename Contact to **Contact Us** and add the requested simple contact form while preserving the page’s existing visual language.
+- Keep the old `/team` URL working by redirecting it to `/about`.
 
 ## Technical details
-- Use TanStack Router route files for `/about`, `/solutions`, `/industries`, `/insights`, and `/contact`.
-- Extract shared navigation/footer and reusable visual elements into focused components to keep page behavior consistent.
-- Use typed router links for internal navigation and keep email as the contact mechanism; no backend or form storage will be added.
-- Verify page links, mobile navigation, layouts, metadata, and key interactions across desktop and mobile.
+- Reuse the existing shared header, footer, route components, data, button, and styling tokens.
+- Use hover/focus behavior for the desktop dropdown and tap-to-expand behavior in the mobile menu.
+- Keep form submission email-based so no database or backend is introduced.
+- Verify desktop and mobile navigation, dropdown behavior, combined page content, form fields, route redirect, and current build health.

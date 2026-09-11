@@ -9,16 +9,16 @@ import { MISSION, teamSections, VISION } from "../data/site";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About ESG Advocacy | Purpose-Driven ESG Intelligence" },
+      { title: "About & Team | ESG Advocacy" },
       {
         name: "description",
         content:
-          "ESG Advocacy is an AI-first ESG intelligence, research and advisory platform built for measurable impact and stakeholder trust.",
+          "Meet ESG Advocacy, its purpose-driven intelligence model, leadership, advisors and research team.",
       },
-      { property: "og:title", content: "About ESG Advocacy" },
+      { property: "og:title", content: "About & Team — ESG Advocacy" },
       {
         property: "og:description",
-        content: "The intelligence architecture behind purpose-driven ESG performance.",
+        content: "The intelligence architecture and people behind purpose-driven ESG performance.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

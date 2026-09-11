@@ -253,7 +253,7 @@
 /* ---------- Graphics-led system UI ---------- */
 .hero-stage { position:relative; overflow:hidden; }
 .hero-globe { position:absolute; inset:0; width:100%; height:100%; color:var(--forest); opacity:.9; pointer-events:none; }
-@media(max-width:1023px){ .hero-globe { opacity:.3; } }
+@media(max-width:1023px){ .hero-globe { opacity:.16; -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 55%); mask-image:linear-gradient(180deg,transparent 0%,#000 55%); } }
 
 .journey-rail { position:relative; display:grid; gap:1px; background:var(--border); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; grid-template-columns:repeat(5,1fr); }
 @media(max-width:767px){ .journey-rail { grid-template-columns:1fr; } }

@@ -174,8 +174,9 @@ export function PageHero({
 
 export function ConsultCta() {
   return (
-    <section className="bg-primary text-primary-foreground">
-      <div className="site-container py-20 lg:py-24">
+    <section className="cta-stage bg-primary text-primary-foreground">
+      <ConvergenceField className="cta-field text-primary-foreground" />
+      <div className="site-container relative py-20 lg:py-24">
         <Reveal>
           <Eyebrow inverse>Begin</Eyebrow>
         </Reveal>

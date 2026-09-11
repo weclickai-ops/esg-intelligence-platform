@@ -5,6 +5,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import logoHorizontal from "../../assets/esg-advocacy-logo-horizontal.png";
 import { Button } from "../ui/button";
 import { CONSULT_MAILTO, navItems } from "../../data/site";
+import { ConvergenceField } from "./CanvasScenes";
 import { Reveal } from "./Reveal";
 
 export function Eyebrow({ children, inverse = false }: { children: ReactNode; inverse?: boolean }) {
@@ -58,14 +59,14 @@ export function SiteHeader() {
             className="h-9 w-auto object-contain object-left sm:h-11"
           />
         </Link>
-        <nav aria-label="Primary navigation" className="hidden items-center gap-7 lg:flex">
+        <nav aria-label="Primary navigation" className="hidden items-center gap-5 xl:flex">
           {navItems.map((item) => (
             <Link key={item.to} to={item.to} className="nav-link" activeProps={{ className: "nav-link is-active" }} activeOptions={{ exact: item.to === "/" }}>
               {item.label}
             </Link>
           ))}
         </nav>
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <Button asChild variant="outline" className="cta-shine">
             <Link to="/contact">Book a consultation</Link>
           </Button>
@@ -73,14 +74,14 @@ export function SiteHeader() {
         <button
           type="button"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
-          className="icon-button lg:hidden"
+          className="icon-button xl:hidden"
           onClick={() => setMenuOpen((value) => !value)}
         >
           {menuOpen ? <X /> : <Menu />}
         </button>
       </div>
       {menuOpen && (
-        <nav aria-label="Mobile navigation" className="mobile-menu lg:hidden">
+        <nav aria-label="Mobile navigation" className="mobile-menu xl:hidden">
           {navItems.map((item, index) => (
             <Link
               key={item.to}

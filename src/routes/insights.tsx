@@ -67,6 +67,9 @@ function InsightsPage() {
                 </span>
               </Reveal>
             ))}
+            <div className="hidden bg-background md:block lg:hidden" aria-hidden="true" />
+            <div className="hidden bg-background lg:block" aria-hidden="true" />
+            <div className="hidden bg-background lg:block" aria-hidden="true" />
           </div>
         </div>
       </section>

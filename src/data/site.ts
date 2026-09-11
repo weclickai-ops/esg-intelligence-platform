@@ -1,12 +1,13 @@
 export const navItems = [
-  { label: "Home", to: "/" as const },
-  { label: "About", to: "/about" as const },
+  { label: "About & Team", to: "/about" as const },
   { label: "Solutions", to: "/solutions" as const },
-  { label: "Industries", to: "/industries" as const },
   { label: "Portfolio", to: "/portfolio" as const },
+  { label: "Contact Us", to: "/contact" as const },
+];
+
+export const industryNavItems = [
+  { label: "Industries", to: "/industries" as const },
   { label: "Insights", to: "/insights" as const },
-  { label: "Team", to: "/team" as const },
-  { label: "Contact", to: "/contact" as const },
 ];
 
 /** Labels that surface inside the hero intelligence network. */

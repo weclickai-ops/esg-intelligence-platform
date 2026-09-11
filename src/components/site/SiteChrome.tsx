@@ -1,10 +1,10 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 
 import logoHorizontal from "../../assets/esg-advocacy-logo-horizontal.png";
 import { Button } from "../ui/button";
-import { CONSULT_MAILTO, navItems } from "../../data/site";
+import { CONSULT_MAILTO, industryNavItems, navItems } from "../../data/site";
 import { ConvergenceField } from "./CanvasScenes";
 import { Reveal } from "./Reveal";
 
@@ -34,10 +34,14 @@ export function ScrollProgress() {
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
-  useEffect(() => setMenuOpen(false), [pathname]);
+  useEffect(() => {
+    setMenuOpen(false);
+    setMobileIndustriesOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -60,8 +64,29 @@ export function SiteHeader() {
           />
         </Link>
         <nav aria-label="Primary navigation" className="hidden items-center gap-5 xl:flex">
-          {navItems.map((item) => (
-            <Link key={item.to} to={item.to} className="nav-link" activeProps={{ className: "nav-link is-active" }} activeOptions={{ exact: item.to === "/" }}>
+          <Link to="/about" className="nav-link" activeProps={{ className: "nav-link is-active" }}>
+            About &amp; Team
+          </Link>
+          <div className="nav-dropdown">
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              className={`nav-dropdown-trigger nav-link ${pathname === "/industries" || pathname === "/insights" ? "is-active" : ""}`}
+              aria-haspopup="menu"
+            >
+              Industries <ChevronDown className="size-3.5" />
+            </Button>
+            <div className="nav-dropdown-menu" role="menu">
+              {industryNavItems.map((item) => (
+                <Link key={item.to} to={item.to} className="nav-dropdown-link" role="menuitem">
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+          {navItems.slice(1).map((item) => (
+            <Link key={item.to} to={item.to} className="nav-link" activeProps={{ className: "nav-link is-active" }}>
               {item.label}
             </Link>
           ))}
@@ -82,13 +107,25 @@ export function SiteHeader() {
       </div>
       {menuOpen && (
         <nav aria-label="Mobile navigation" className="mobile-menu xl:hidden">
-          {navItems.map((item, index) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className="mobile-link"
-              style={{ animationDelay: `${index * 55}ms` }}
-            >
+          <Link to="/about" className="mobile-link">About &amp; Team</Link>
+          <Button
+            type="button"
+            variant="ghost"
+            className="mobile-dropdown-trigger mobile-link"
+            aria-expanded={mobileIndustriesOpen}
+            onClick={() => setMobileIndustriesOpen((value) => !value)}
+          >
+            Industries <ChevronDown className={`size-4 ${mobileIndustriesOpen ? "is-open" : ""}`} />
+          </Button>
+          {mobileIndustriesOpen && (
+            <div className="mobile-submenu">
+              {industryNavItems.map((item) => (
+                <Link key={item.to} to={item.to} className="mobile-sublink">{item.label}</Link>
+              ))}
+            </div>
+          )}
+          {navItems.slice(1).map((item, index) => (
+            <Link key={item.to} to={item.to} className="mobile-link" style={{ animationDelay: `${(index + 2) * 55}ms` }}>
               {item.label}
             </Link>
           ))}
@@ -126,6 +163,11 @@ export function SiteFooter() {
                 <Link to={item.to} className="footer-link">
                   {item.label}
                 </Link>
+              </li>
+            ))}
+            {industryNavItems.map((item) => (
+              <li key={item.to}>
+                <Link to={item.to} className="footer-link">{item.label}</Link>
               </li>
             ))}
           </ul>

@@ -338,7 +338,9 @@
 .universe-shell-inner { width:52%; border-style:dashed; }
 .universe-node { position:absolute; padding:.4rem .75rem; border-radius:999px; border:1px solid var(--border); background:var(--background); font-size:.72rem; white-space:nowrap; transition:border-color .3s ease, color .3s ease, opacity .3s ease; }
 .universe-node.is-active { border-color:var(--forest); color:var(--forest); box-shadow:0 14px 30px -22px var(--primary); }
-@media(max-width:767px){ .universe { height:24rem; } .universe-node { font-size:.64rem; padding:.3rem .55rem; } }
+.universe-chips { display:flex; flex-wrap:wrap; gap:.5rem; }
+.universe-node.is-static { position:static; transform:none; opacity:1; }
+@media(max-width:767px){ .universe-node { font-size:.7rem; padding:.35rem .6rem; } }
 
 .intel-hero { position:relative; overflow:hidden; border-bottom:1px solid var(--border); }
 .intel-hero-field { position:absolute; inset:0; width:100%; height:100%; color:var(--forest); opacity:.28; pointer-events:none; }

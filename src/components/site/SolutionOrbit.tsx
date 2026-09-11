@@ -28,7 +28,7 @@ export function SolutionOrbit() {
               <div
                 key={solution.title}
                 className="orbit-slot"
-                style={{ left: `${50 + Math.cos(angle) * 42}%`, top: `${50 + Math.sin(angle) * 42}%` }}
+                style={{ left: `${50 + Math.cos(angle) * 38}%`, top: `${50 + Math.sin(angle) * 38}%` }}
               >
                 <button
                   type="button"

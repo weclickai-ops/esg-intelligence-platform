@@ -298,7 +298,7 @@
 .arch-link { stroke:var(--forest); opacity:0; transition:opacity .35s ease; }
 .arch-link.is-lit { opacity:.5; }
 
-.orbit { position:relative; aspect-ratio:1; width:100%; max-width:30rem; margin-inline:auto; }
+.orbit { position:relative; aspect-ratio:1; width:100%; max-width:26rem; margin-inline:auto; }
 .orbit-ring { position:absolute; border:1px dashed var(--border); border-radius:999px; }
 .orbit-ring-1 { inset:8%; animation:arch-spin 70s linear infinite; }
 .orbit-ring-2 { inset:24%; animation:arch-spin 50s linear reverse infinite; }

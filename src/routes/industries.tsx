@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { ConsultCta, Eyebrow, PageHero } from "../components/site/SiteChrome";
+import { IndustryUniverse } from "../components/site/IndustryUniverse";
 import { Reveal } from "../components/site/Reveal";
-import { industries } from "../data/site";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/industries")({
           "ESG intelligence tailored to corporates, listed companies, SMEs, startups, financial institutions, real estate, manufacturing, technology and the public sector.",
       },
       { property: "og:title", content: "Industries — ESG Advocacy" },
-      { property: "og:description", content: "Sector-specific ESG strategy, research and disclosure intelligence." },
+      { property: "og:description", content: "An interactive industry network with sector challenges and responses." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -28,20 +28,12 @@ function IndustriesPage() {
       <PageHero
         eyebrow="Industries"
         title="Sector context changes everything."
-        copy="Materiality, regulation and stakeholder expectations differ sharply by sector. Our research models are calibrated to the realities of each one."
+        copy="Materiality, regulation and stakeholder expectation differ sharply by sector. Explore the network to see the challenge and the response for each."
       />
 
-      <section className="border-y border-border">
+      <section className="border-y border-border bg-secondary/50">
         <div className="site-container py-16 lg:py-20">
-          <div className="industry-grid">
-            {industries.map(([name, copy], index) => (
-              <Reveal key={name} delay={index * 45} variant="blur" className="industry-cell group">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{name}</strong>
-                <p className="industry-copy">{copy}</p>
-              </Reveal>
-            ))}
-          </div>
+          <IndustryUniverse />
         </div>
       </section>
 
